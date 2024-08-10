@@ -1,0 +1,17 @@
+<section>
+  <form [formGroup]="formClient" (ngSubmit)="sendData()">
+    <input formControlName="name" type="text" placeholder="write name">
+    <input formControlName="lastName" type="text" placeholder="write lastName">
+    <input formControlName="email" type="text" placeholder="write email">
+    <input formControlName="phone" type="text" placeholder="write phone">
+    <button type="submit">Add Client</button>
+  </form>
+</section>
+
+<section>
+  <div *ngFor="let client of getClient$ | async">
+    <p>{{client.id}}</p>
+    <p>{{client.name}}</p>
+    <p>{{client.email}}</p>
+  </div>
+</section>
